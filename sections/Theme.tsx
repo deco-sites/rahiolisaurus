@@ -20,19 +20,19 @@ export interface MainColors {
    * @title Primary
    * @default #003232
    */
-  "primary": string;
+  primary: string;
   /**
    * @format color
    * @title Scondary
    * @default #8C3D3D
    */
-  "secondary": string;
+  secondary: string;
   /**
    * @format color
    * @title Tertiary
    * @default #00FF7F
    */
-  "tertiary": string;
+  tertiary: string;
 }
 
 export interface ComplementaryColors {
@@ -138,31 +138,31 @@ export interface SystemColors {
    * @format color
    * @default #333333
    */
-  "neutral": string;
+  neutral: string;
 
   /**
    * @format color
    * @default #EAFAF2
    */
-  "success": string;
+  success: string;
 
   /**
    * @format color
    * @default #FFF8E6
    */
-  "warning": string;
+  warning: string;
 
   /**
    * @format color
    * @default #FFE9E5
    */
-  "error": string;
+  error: string;
 
   /**
    * @format color
    * @default #F0F5FF
    */
-  "info": string;
+  info: string;
 }
 
 export interface Button {
@@ -314,8 +314,8 @@ const contrasted = (color: string, percentage = 0.8) => {
   const c = Color.string(color);
 
   return c.isDark()
-    ? c.mix(Color.rgb(255, 255, 255), percentage).saturate(.1)
-    : c.mix(Color.rgb(0, 0, 0), percentage).saturate(.1);
+    ? c.mix(Color.rgb(255, 255, 255), percentage).saturate(0.1)
+    : c.mix(Color.rgb(0, 0, 0), percentage).saturate(0.1);
 };
 
 const toVariables = (t: Theme): [string, string][] => {
@@ -376,18 +376,18 @@ const toVariables = (t: Theme): [string, string][] => {
 };
 
 const defaultTheme = {
-  "primary": "hsla(209, 28%, 21%, 1)",
+  primary: "hsla(209, 28%, 21%, 1)",
   "primary-content": "hsla(0, 0%, 100%, 1)",
-  "secondary": "hsla(104, 18%, 46%, 1)",
+  secondary: "hsla(104, 18%, 46%, 1)",
   "secondary-content": "hsla(0, 0%, 100%, 1)",
-  "tertiary": "hsla(8, 69%, 65%, 1)",
+  tertiary: "hsla(8, 69%, 65%, 1)",
   "tertiary-content": "hsla(0, 0%, 100%, 1)",
-  "neutral": "hsla(0, 0%, 47%, 1)",
+  neutral: "hsla(0, 0%, 47%, 1)",
   "base-100": "hsla(0, 0%, 100%, 1)",
-  "success": "hsl(150 62% 95%)",
-  "warning": "hsl(43 100% 95%)",
-  "error": "hsl(9 100% 95%)",
-  "info": "hsl(220 100% 97%)",
+  success: "hsl(150 62% 95%)",
+  warning: "hsl(43 100% 95%)",
+  error: "hsl(9 100% 95%)",
+  info: "hsl(220 100% 97%)",
 
   "--rounded-box": "1rem", // border radius rounded-box utility class, used in card and other large boxes
   "--rounded-btn": "0.2rem" as const, // border radius rounded-btn utility class, used in buttons and similar element
@@ -655,11 +655,7 @@ export function Preview(props: Props) {
         </div>
         {" "}
       </div>
-      {selectedFont && (
-        <div class="text-center py-2">
-          Font: {selectedFont}
-        </div>
-      )}
+      {selectedFont && <div class="text-center py-2">Font: {selectedFont}</div>}
     </>
   );
 }
