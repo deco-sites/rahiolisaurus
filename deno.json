@@ -17,5 +17,8 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
+  },
+  "fmt": {
+    "exclude": ["schemas.gen.json"]
   }
 }
